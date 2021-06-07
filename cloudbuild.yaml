@@ -14,4 +14,6 @@ steps:
 # to use charts from
 - name: 'gcr.io/$PROJECT_ID/helm'
   args: ['install' , 'spinnaker', 'chart.yaml']
+  env:
+  - 'KUBECONFIG=/workspace/.kube/config'
 
