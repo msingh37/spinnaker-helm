@@ -293,9 +293,9 @@ minio:
 
 # Google Cloud Storage
 gcs:
-  enabled: false
-  project: my-project-name
-  bucket: "<GCS-BUCKET-NAME>"
+  enabled: true
+  project: "cto-opus-frictionless-lab"
+  bucket: "spinakker-deployfiles"
   ## if jsonKey is set, will create a secret containing it
   jsonKey: '<INSERT CLOUD STORAGE JSON HERE>'
   ## override the name of the secret to use for jsonKey, if `jsonKey`
