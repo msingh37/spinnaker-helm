@@ -8,14 +8,7 @@ steps:
   - 'KUBECONFIG=/workspace/.kube/config'
   args: ['cluster-info']
 
-- name: 'gcr.io/$PROJECT_ID/helm'
-  entrypoint: 'bash'
-  args:
-  - '-c'
-  - |
-  helm repo add opsmx https://helmcharts.opsmx.com/
-
-  
+ 
 # run helm command to install/upgrade spinnaker
 # optionally you can set to add any other Helm chart repository
 # to use charts from
