@@ -8,14 +8,17 @@ steps:
   - 'KUBECONFIG=/workspace/.kube/config'
   args: ['cluster-info']
 
+- name: 'gcr.io/$PROJECT_ID/helm'
+  args: ['update  
+
 # run helm command to install/upgrade spinnaker
 # optionally you can set to add any other Helm chart repository
 # to use charts from
 - name: 'gcr.io/$PROJECT_ID/helm'
-  args: ['install', 'spinnaker', 'stable/spinnaker' , '--namespace', 'spinnaker']
+  args: ['install', 'spinnaker', 'opsmx/spinnaker' , '--namespace', 'spinnaker' '--version' '2.2.6']
   env:
   - 'KUBECONFIG=/workspace/.kube/config'
-  - 'HELM_REPO_NAME=spinnaker'
+  - 'HELM_REPO_NAME=opsmx/spinnaker'
   - 'HELM_REPO_URL=https://helmcharts.opsmx.com/'
   - 'TILLERLESS=true'
   - 'TILLER_NAMESPACE=test'
