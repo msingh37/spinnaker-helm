@@ -8,8 +8,9 @@ steps:
   - 'KUBECONFIG=/workspace/.kube/config'
   args: ['cluster-info']
 
- - name: 'gcr.io/cloud-builders/kubectl'
-   args: ['create','namespace','test-spinnaker']
+ 
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['create','namespace','test-spinnaker']
    
 # run helm command to install/upgrade spinnaker
 # optionally you can set to add any other Helm chart repository
