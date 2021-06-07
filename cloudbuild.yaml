@@ -25,6 +25,6 @@ steps:
   - 'KUBECONFIG=/workspace/.kube/config'
   - 'HELM_REPO_NAME=opsmx'
   - 'HELM_REPO_URL=https://helmcharts.opsmx.com/'
-  - 'TILLERLESS=true'
+  - 'TILLERLESS=false'
   - 'TILLER_NAMESPACE=test'
 
