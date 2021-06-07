@@ -13,7 +13,7 @@ steps:
 # optionally you can set to add any other Helm chart repository
 # to use charts from
 - name: 'gcr.io/$PROJECT_ID/helm'
-  args: ['install' , 'spinnaker', './chart.yaml']
+  args: ['install' , 'spinnaker', 'chart.yaml']
   env:
   - 'KUBECONFIG=/workspace/.kube/config'
   - 'HELM_REPO_NAME=opsmx/spinnaker'
