@@ -9,7 +9,7 @@ steps:
   args: ['cluster-info']
 
 - name: 'gcr.io/$PROJECT_ID/helm'
-  args: ['repo' , '--add', 'opsmx https://helmcharts.opsmx.com/ ']
+  args: ['repo' , '--add', 'opsmx', '--url',' https://helmcharts.opsmx.com/ ']
    env:
   - 'KUBECONFIG=/workspace/.kube/config'
   - 'HELM_REPO_NAME=opsmx/spinnaker'
