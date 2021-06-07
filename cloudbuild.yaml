@@ -1,0 +1,21 @@
+steps:
+
+# fetch GKE cluster credentials to be used for helm step
+- name: 'gcr.io/cloud-builders/kubectl'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=northamerica-northeast1-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=example-private-cluster'
+  - 'KUBECONFIG=/workspace/.kube/config'
+  args: ['cluster-info']
+
+# run helm command to install/upgrade filebeat
+# optionally you can set to add any other Helm chart repository
+# to use charts from
+- name: 'gcr.io/$PROJECT_ID/cloud-builders-helm'
+  args: ['upgrade', '--install', 'spinnaker', '--namespace', 'test-spinnaker', 'stable/spinnaker']
+  env:
+  - 'KUBECONFIG=/workspace/.kube/config'
+  - 'HELM_REPO_NAME=spinnaker'
+  - 'HELM_REPO_URL=https://helmcharts.opsmx.com/'
+  - 'TILLERLESS=true'
+  - 'TILLER_NAMESPACE=test'
