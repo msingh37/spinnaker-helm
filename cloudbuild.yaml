@@ -11,7 +11,7 @@ steps:
 # run helm command to install/upgrade spinnaker
 # optionally you can set to add any other Helm chart repository
 # to use charts from
-- name: 'gcr.io/$PROJECT_ID/cloud-builders-helm'
+- name: 'gcr.io/$PROJECT_ID/helm'
   args: ['upgrade', '--install', 'spinnaker', '--namespace', 'test-spinnaker', 'stable/spinnaker']
   env:
   - 'KUBECONFIG=/workspace/.kube/config'
