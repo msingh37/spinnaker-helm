@@ -11,6 +11,10 @@ steps:
  
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['create','namespace','test-spinnaker']
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=northamerica-northeast1-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=example-private-cluster'
+
    
 # run helm command to install/upgrade spinnaker
 # optionally you can set to add any other Helm chart repository
