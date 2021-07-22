@@ -8,15 +8,15 @@ steps:
       - CLOUDSDK_CONTAINER_CLUSTER=opus-gke-we1-np-prep
       - KUBECONFIG=/workspace/.kube/config
     name: gcr.io/cloud-builders/kubectl
-  - 
-    args: 
-      - create
-      - namespace
-      - spinnaker
-    env: 
-      - CLOUDSDK_COMPUTE_ZONE=us-west1
-      - CLOUDSDK_CONTAINER_CLUSTER=opus-gke-we1-np-prep
-    name: gcr.io/cloud-builders/kubectl
+#  - 
+#    args: 
+#      - create
+#      - namespace
+#      - spinnaker
+#    env: 
+#      - CLOUDSDK_COMPUTE_ZONE=us-west1
+#      - CLOUDSDK_CONTAINER_CLUSTER=opus-gke-we1-np-prep
+ #   name: gcr.io/cloud-builders/kubectl
   - 
     args: 
       - install
