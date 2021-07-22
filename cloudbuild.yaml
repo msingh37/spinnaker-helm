@@ -22,7 +22,7 @@ steps:
       - install
       - spinnaker
       - "--namespace"
-      - spinnaker
+      - spinnaker2
       - opsmx/spinnaker
     env: 
       - KUBECONFIG=/workspace/.kube/config
